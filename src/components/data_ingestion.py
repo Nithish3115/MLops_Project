@@ -27,6 +27,19 @@ class DataIngestion:
         try:
             data=pd.read_csv(Path(os.path.join("Dataset","raw.csv")))
             logging.info(" i have read dataset as a df")
+            data = pd.read_csv(Path(os.path.join("Dataset", "raw.csv")))
+            logging.info("Dataset read as a DataFrame")
+
+            # Check for NaN values
+            if data.isnull().values.any():
+                logging.warning("Data contains NaN values. Checking the number of NaNs in each column:")
+                logging.warning(data.isnull().sum())
+
+                # Handle NaN values: Example - Dropping rows with NaN values
+                initial_shape = data.shape
+                data.dropna(inplace=True)
+                logging.info(f"Dropped {initial_shape[0] - data.shape[0]} rows with NaN values.")
+
             
             
             os.makedirs(os.path.dirname(os.path.join(self.ingestion_config.raw_data_path)),exist_ok=True)
@@ -54,4 +67,9 @@ class DataIngestion:
         except Exception as e:
            logging.info("exception during occured at data ingestion stage")
            raise customexception(e,sys)
+        
+# if __name__=="__main__":
+#    obj= DataIngestion()
+#    obj.initiate_data_ingestion()
     
+ 
