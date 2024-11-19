@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Price Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .result-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #4CAF50; /* Green color for the price */
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #4CAF50; /* Green border */
+            border-radius: 5px;
+            background-color: #e8f5e9; /* Light green background */
+        }
+        .back-button {
+            background-color: #2196F3; /* Blue color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            text-decoration: none; /* Remove underline */
+        }
+        .back-button:hover {
+            background-color: #1976D2; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>The Diamond Price Will Be:</h1>
+        <div class="price">${{ final_result }}</div>
+        <a href="predict" class="back-button">Go Back to Form</a>
+    </div>
+</body>
+</html>
